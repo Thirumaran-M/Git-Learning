@@ -1,3 +1,4 @@
+//Day 3 - Question 3 Assessment
 var req = new XMLHttpRequest;
 req.open("GET","https://restcountries.com/v3.1/all");
 req.send();
