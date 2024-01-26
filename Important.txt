@@ -1,4 +1,46 @@
 
+################################
+
+// Hello Check this out it works absolutely fine
+let request = new XMLHttpRequest();
+request.open("GET", "https://restcountries.com/v3.1/all")
+request.send();
+request.onload = () => {
+    let data = JSON.parse(request.response)
+     /* console.log(data) */
+    let answer = data.filter((dummy) => (dummy.currencies !== undefined))
+    console.log(answer.length)
+    let realanswer = answer.filter((data) =>  {
+    for (let key in data.currencies) {
+        if(data.currencies[key].name === "United States dollar"){
+      return data
+      }
+    }
+    })
+    console.log(realanswer.length, realanswer[0].currencies)
+}
+
+
+#######################
+// get user input
+const age = prompt("What is your age?");
+
+// check condition
+const message = (age >= 18) ? "You are an adult" : "You are not an adult yet";
+
+console.log(message); 
+
+
+##########################
+// get user input
+const age = prompt("What is your age?");
+
+// check condition
+const message = (age >= 18) ? (age == 18 ? "You are exactly 18" : "You are over 18") : "You are under 18";
+
+console.log(message); 
+########################
+
 
 for-in loop sample
 ==================
