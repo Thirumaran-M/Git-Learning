@@ -26,3 +26,8 @@ else {
 }
 console.log("is object equal " + flag);
 
+
+#############
+for(key in res) { 
+    console.log(key + " => " + res[key]);
+}

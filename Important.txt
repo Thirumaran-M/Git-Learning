@@ -1,3 +1,123 @@
+//Object.keys();
+
+const object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false,
+  };
+  
+  console.log(Object.keys(object1));
+  // Expected output: Array ["a", "b", "c"]
+
+  for(var i of Object.keys(object1)){
+    console.log(`For Of: ${i} => ${object1[i]}`);
+  }
+  
+  Object.keys(object1).forEach((ele) => {
+    console.log(`ForEach : ${object1[ele]} => ${ele}`);
+  });
+  
+
+//filter function in array of objects
+
+const olderUsers = users.filter(user => user.age>30);
+console.log(olderUsers);
+
+//every and some
+
+result = users.every(IsEligible);
+
+console.log("Eligible:",result);
+
+result = users.some(IsEligible);
+
+console.log("Eligible:",result);
+
+function IsEligible(element){
+	return element.age>=18;
+}
+
+#########################
+
+//sort smallest to largest
+num = [10,100,9,150,25,35,65,90];
+
+num.sort((a,b)=>{
+    return a-b;
+});
+console.log("Ascending Order Sort: " +num);
+
+//sort by object smallest to largest
+
+num.sort((a,b)=>{
+    return a.age-b.age;
+});
+
+console.log("Ascending Order Sort: " +num);
+
+//sort by object Ascending Order
+num.sort((a,b)=>{
+    if(a.name>b.name) return 1;
+    if(b.name>a.name) return -1;
+    return 0;
+});
+
+console.log("Ascending Order Sort: " +num);
+
+
+//Spread operator and Map Function (Add new field in existing object using map and spread function)
+//...variableName
+
+let eligible_status = users.map((user) => ({
+    ...user,
+    status:user.age>18?"eligible":"not eligible";
+}))
+console.table(eligible_status);
+
+##################
+
+let fname = "Thiru";
+let output = "";
+output = "<table border='1'><tr><th>"+fname+"</th></tr></table>";
+
+document.body.innerHTML=output;
+
+
+//Validate the undefined object and return using ternary operator
+data[i].subregion = data[i].subregion?data[i].subregion:"No Sub Region Found";
+
+//Nullish coalescing operator 
+data[i].subregion??="No Sub Region Found";
+
+
+//Input from user
+let age = prompt("Enter your Age : ");
+
+################
+//Get keys of an object
+let user = {
+    name:"Thiru",
+    age:32;
+    city:"chennai"
+}
+
+let arr_keys = Object.keys(user);
+console.table(arr_keys);
+
+let arr_values = Object.values(user);
+console.table(arr_values);
+
+################
+
+//includes in JS
+
+const pets = ['rat','bat','cat'];
+
+console.log(pets.includes('mat')); //prints false
+
+//padStart and padEnd eg: sprintf();
+
+a=a.padStart(4,0); //sprintf(%04d,$a);
 
 ################################
 
@@ -68,6 +188,23 @@ for (let key in person1) {
 }
 
 
+#################
+var arr1 = [3,'q','q','q',2,3,'q',2,4,9,3];
+
+function Count(args){
+    var Result = {};
+    for(var i = 0; i < args.length;i++){
+        if(Result.args[i]){
+            Result.args[i]++;
+        }else{
+          Result="{args[i]:1}";
+        }
+    }
+    console.log(Result.q);
+}
+Count(arr1)
+
+
 git init	Initialize a local Git repository
 git commit -m "[commit message]"	Commit changes
 git remote add origin ssh://git@github.com/[username]/[repository-name].git	Add a remote repository
@@ -110,3 +247,8 @@ git revert commitid	Revert commit changes
 git config --global user.name "your_username"	Set globally Username
 git config --global user.email "your_email_address@example.com"	Set globally Email id
 git config --global --list	Get global config
+
+
+
+
+
